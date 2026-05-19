@@ -370,12 +370,6 @@ export default function Portfolio() {
           SYNTAXIA<span style={{ color: C.blurple }}>.</span>DEV
         </span>
         <div style={{ display: "flex", gap: 2, alignItems: "center" }}>
-          {navLinks.map(id => (
-            <button key={id} className={`nav-link${activeSection === id ? " active" : ""}`} onClick={() => scrollTo(id)}>{id}</button>
-          ))}
-          <button className="admin-btn" onClick={() => isAdmin ? setIsAdmin(false) : setModal("login")} style={{ background: isAdmin ? C.blurple + "22" : "none", border: `1px solid ${isAdmin ? C.blurple : C.border}`, color: isAdmin ? C.blurple : C.muted }}>
-            {isAdmin ? "ADMIN ✓" : "ADMIN"}
-          </button>
         </div>
       </nav>
 
