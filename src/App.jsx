@@ -335,16 +335,19 @@ export default function Portfolio() {
     setSaving(false);
   };
 
-  // ── Delete ──────────────────────────────────────────────────────────────
   const handleDeleteItem = async () => {
-    if (delType === "work") {
-      await supabase.from("works").delete().eq("id", delId);
-      setWorks(prev => prev.filter(w => w.id !== delId));
+    const id = delId;
+    const type = delType;
+    setModal(null);
+    setDelId(null);
+
+    if (type === "work") {
+      const { error } = await supabase.from("works").delete().eq("id", id);
+      if (!error) setWorks(prev => prev.filter(w => w.id !== id));
     } else {
-      await supabase.from("contribs").delete().eq("id", delId);
-      setContribs(prev => prev.filter(c => c.id !== delId));
+      const { error } = await supabase.from("contribs").delete().eq("id", id);
+      if (!error) setContribs(prev => prev.filter(c => c.id !== id));
     }
-    setDelId(null); setModal(null);
   };
 
   const filtered = filter === "all" ? works : works.filter(w => w.category === filter);
