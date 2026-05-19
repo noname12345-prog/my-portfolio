@@ -370,6 +370,9 @@ export default function Portfolio() {
           SYNTAXIA<span style={{ color: C.blurple }}>.</span>DEV
         </span>
         <div style={{ display: "flex", gap: 2, alignItems: "center" }}>
+          {navLinks.map(id => (
+            <button key={id} className={`nav-link${activeSection === id ? " active" : ""}`} onClick={() => scrollTo(id)}>{id}</button>
+          ))}
         </div>
       </nav>
 
