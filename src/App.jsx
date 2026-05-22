@@ -713,13 +713,13 @@ export default function Portfolio() {
                         ? <img src={curReview.discord_avatar} alt="avatar" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
                         : <span style={{ fontSize: 20, color: C.dim }}>👤</span>}
                     </div>
-                    <div>
-                      <div style={{ fontFamily: "'Space Mono', monospace", fontSize: 14, color: C.white, fontWeight: 700 }}>{curReview.name}</div>
+                    <div style={{ textAlign: "left" }}>
                       {curReview.discord_username && (
-                        <div style={{ fontSize: 12, color: C.muted, marginTop: 2, display: "flex", alignItems: "center", gap: 4 }}>
+                        <div style={{ fontSize: 12, color: C.blurple, marginBottom: 2, display: "flex", alignItems: "center", gap: 4 }}>
                           <span style={{ fontSize: 11 }}>💬</span> {curReview.discord_username}
                         </div>
                       )}
+                      <div style={{ fontFamily: "'Space Mono', monospace", fontSize: 14, color: C.white, fontWeight: 700 }}>{curReview.name}</div>
                     </div>
                     <div style={{ marginLeft: "auto" }}>
                       {renderStars(curReview.rating, 18)}
