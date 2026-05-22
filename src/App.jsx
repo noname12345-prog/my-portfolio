@@ -662,7 +662,7 @@ export default function Portfolio() {
       <section id="reviews" style={{ padding: "6rem 2rem", maxWidth: 720, margin: "0 auto" }}>
         {/* Header row */}
         <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", flexWrap: "wrap", gap: 16, marginBottom: "2rem" }}>
-          <div>
+          <div style={{ textAlign: "left" }}>
             <Label>Testimonials</Label>
             <h2 style={{ fontFamily: "'Space Mono', monospace", fontSize: "clamp(1.4rem, 3vw, 2rem)", color: C.white, fontWeight: 700 }}>Client reviews</h2>
           </div>
@@ -746,7 +746,7 @@ export default function Portfolio() {
                 {renderStars(Math.round(avg), 22)}
               </div>
               <div style={{ fontFamily: "'Space Mono', monospace", fontSize: 12, color: C.muted }}>
-                {avg} / 5 · {reviews.length} {reviews.length === 1 ? "review" : "reviews"}
+                {Number(avg).toFixed(1)} / 5 · {reviews.length} {reviews.length === 1 ? "review" : "reviews"}
               </div>
               <div style={{ display: "flex", justifyContent: "center", gap: 6, marginTop: 14 }}>
                 {reviews.map((_, i) => (
