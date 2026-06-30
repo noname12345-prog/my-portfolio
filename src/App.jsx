@@ -517,6 +517,24 @@ export default function Portfolio() {
           {navLinks.map(id => (
             <button key={id} className={`nav-link${activeSection === id ? " active" : ""}`} onClick={() => scrollTo(id)}>{id}</button>
           ))}
+
+          {isAdmin ? (
+            <button
+              className="admin-btn"
+              onClick={() => setIsAdmin(false)}
+              style={{ background: "#ef444422", color: "#ef4444", border: "1px solid #ef444444" }}
+            >
+              ✕ Admin
+            </button>
+          ) : (
+            <button
+              className="admin-btn"
+              onClick={() => { setPw(""); setPwErr(false); setModal("login"); }}
+              style={{ background: C.blurple + "22", color: C.blurple, border: `1px solid ${C.blurple}44` }}
+            >
+              Admin
+            </button>
+          )}
         </div>
       </nav>
 
@@ -548,7 +566,7 @@ export default function Portfolio() {
         <Label>About</Label>
         <h2 style={{ fontFamily: "'Space Mono', monospace", fontSize: "clamp(1.4rem, 3vw, 2rem)", color: C.white, marginBottom: "1.5rem", fontWeight: 700 }}>Hey, Im Syntaxia/Syn 👋</h2>
         <p style={{ fontSize: 15, color: C.muted, lineHeight: 1.9, marginBottom: "1.2rem" }}>Im a roblox <strong style={{ color: C.text }}>Luau</strong> developer as well as a <strong style={{ color: C.text }}>Haxe</strong> programmer, <strong style={{ color: C.text }}>render artist</strong> and <strong style={{ color: C.text }}>SFX designer</strong>. I can code almost anything, starting from simple scripts to complex game systems.</p>
-        <p style={{ fontSize: 15, color: C.muted, lineHeight: 1.9, marginBottom: "1.2rem" }}>I've contributed to <strong style={{ color: C.text }}>UBA</strong> (10M+ visits). I'm always working on something new - whether it's a game, a visual piece, or a SFX I make for fun.</p>
+        <p style={{ fontSize: 15, color: C.muted, lineHeight: 1.9, marginBottom: "1.2rem" }}>I am a developer at <strong style={{ color: C.text }}>UBA</strong> (10M+ visits). I'm always working on something new - whether it's a game, a visual piece, or a SFX I make for fun.</p>
         <p style={{ fontSize: 15, color: C.muted, lineHeight: 1.9 }}>Feel free to browse my works below!</p>
       </section>
 
