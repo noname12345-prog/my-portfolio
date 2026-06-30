@@ -113,8 +113,8 @@ const injectStyles = () => {
 
     .admin-btn {
       margin-left: 8px; border-radius: 6px; cursor: pointer;
-      font-size: 12px; font-family: 'Space Mono', monospace;
-      transition: all 0.15s; padding: 5px 12px;
+      font-size: 14px; font-family: 'Space Mono', monospace;
+      transition: all 0.15s; padding: 8px 18px;
     }
     .admin-btn:hover { opacity: 0.8; transform: scale(1.03); }
 
